@@ -84,11 +84,11 @@
 		36BE22D52BEBA3FA0042A987 /* FreshMovie */ = {
 			isa = PBXGroup;
 			children = (
+				36BE22D62BEBA3FA0042A987 /* FreshMovieApp.swift */,
+				36BE22D82BEBA3FA0042A987 /* ContentView.swift */,
 				363BF2402BF762AC00A5F19E /* Model */,
 				363BF2412BF762B200A5F19E /* View */,
 				363BF2422BF762D600A5F19E /* ViewModel */,
-				36BE22D62BEBA3FA0042A987 /* FreshMovieApp.swift */,
-				36BE22D82BEBA3FA0042A987 /* ContentView.swift */,
 				36BE22DA2BEBA3FC0042A987 /* Assets.xcassets */,
 				36BE22DC2BEBA3FC0042A987 /* Preview Content */,
 			);
@@ -364,7 +364,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -395,7 +395,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
