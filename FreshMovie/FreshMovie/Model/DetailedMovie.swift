@@ -1,6 +1,8 @@
 import Foundation
 
-struct Movie: Codable {
+/// Extended description of the film, including information about the budget,
+/// production companies, production countries, revenue, and status.
+struct DetailedMovie: Codable {
     /// Indicates if the movie is for adults.
     let adult: Bool
 
