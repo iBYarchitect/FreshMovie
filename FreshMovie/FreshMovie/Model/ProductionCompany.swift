@@ -1,7 +1,7 @@
 import Foundation
 
 /// Organisation responsible for the creation and production of films.
-struct ProductionCompany: Codable {
+struct ProductionCompany: Codable, Identifiable {
     /// The unique identifier.
     let id: Int
 
