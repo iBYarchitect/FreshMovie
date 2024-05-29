@@ -6,15 +6,23 @@ struct HScrollMovieTileView: View {
             VStack {
                 HStack {
                     Text(title)
-                        .font(.system(size: 20))
-                        .bold()
+                        .font(
+                            .system(
+                                size: AppStyle.FontStyle.heading.size,
+                                weight: .heavy
+                            )
+                        )
 
                     Spacer()
 
                     NavigationLink(destination: GridMovieView(movies: BasicMovie.Dummy.basicMovies, title: title)) {
-                        Text("More")
-                            .font(.system(size: 20))
-                            .bold()
+                        Text(moreTitle)
+                            .font(
+                                .system(
+                                    size: AppStyle.FontStyle.heading.size,
+                                    weight: .heavy
+                                )
+                            )
                     }
                 }
                 .padding(.horizontal)
@@ -27,15 +35,20 @@ struct HScrollMovieTileView: View {
                             }
                         }
                     }
+                    .foregroundColor(.black)
                     .padding()
                 }
             }
-            .frame(height: 400)
+            .frame(height: scrollBlockHeight)
             .background(Color.App.grayLight)
         }
     }
 
+    // MARK: - Private interface
+
     private let title = "Top 250"
+    private let moreTitle = "More"
+    private let scrollBlockHeight: CGFloat = 400
 }
 
 #Preview {

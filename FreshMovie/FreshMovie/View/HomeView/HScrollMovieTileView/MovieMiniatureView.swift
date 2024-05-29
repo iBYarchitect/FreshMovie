@@ -11,21 +11,35 @@ struct MovieMiniatureView: View {
 
             VStack(alignment: .leading) {
                 Text("\(movie.voteAverage)")
-                    .font(.system(size: 12))
+                    .font(
+                        .system(
+                            size: AppStyle.FontStyle.footnote.size
+                        )
+                    )
 
                 Text("")
 
                 Text(movie.title)
-                    .font(.system(size: 12))
+                    .font(
+                        .system(
+                            size: AppStyle.FontStyle.footnote.size
+                        )
+                    )
                     .lineLimit(1)
             }
             .padding()
         }
-        .frame(width: 125)
+        .frame(width: cardWidth)
         .background(Color.white)
-        .clipShape(RoundedRectangle(cornerRadius: 10))
-        .shadow(radius: 5)
+        .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius))
+        .shadow(radius: shadowRadius)
     }
+
+    // MARK: - Private interface
+
+    private let cardWidth: CGFloat = 125
+    private let cardCornerRadius: CGFloat = 10
+    private let shadowRadius: CGFloat = 5
 }
 
 #Preview {
