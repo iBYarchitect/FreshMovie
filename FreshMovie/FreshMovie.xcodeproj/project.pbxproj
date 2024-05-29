@@ -134,6 +134,15 @@
 			path = ProfileView;
 			sourceTree = "<group>";
 		};
+		362EF77E2C0750E000628652 /* GridMovieView */ = {
+			isa = PBXGroup;
+			children = (
+				362EF7752C07454400628652 /* GridMovieView.swift */,
+				362EF77C2C0748F600628652 /* MovieGridCellView.swift */,
+			);
+			path = GridMovieView;
+			sourceTree = "<group>";
+		};
 		363BF2402BF762AC00A5F19E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,8 +162,7 @@
 				362EF7792C07488F00628652 /* HomeView */,
 				362EF77A2C0748B500628652 /* FavouritesView */,
 				362EF77B2C0748C600628652 /* ProfileView */,
-				362EF7752C07454400628652 /* GridMovieView.swift */,
-				362EF77C2C0748F600628652 /* MovieGridCellView.swift */,
+				362EF77E2C0750E000628652 /* GridMovieView */,
 				362EF7732C071A7600628652 /* DetailedMovieView.swift */,
 			);
 			path = View;
