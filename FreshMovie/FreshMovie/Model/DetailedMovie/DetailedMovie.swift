@@ -13,7 +13,7 @@ struct DetailedMovie: Codable {
     let genres: [Genre]
 
     /// The unique identifier of the movie.
-    let id: String
+    let id: Int
 
     /// The countries where the movie was produced.
     let originCountry: [String]
@@ -35,6 +35,9 @@ struct DetailedMovie: Codable {
 
     /// The release date of the movie in the format "YYYY-MM-DD".
     let releaseDate: String
+
+    /// Duration of the movie.
+    let runTime: Int
 
     /// Production companies involved in making the movie.
     let productionCompanies: [ProductionCompany]

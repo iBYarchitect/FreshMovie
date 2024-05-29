@@ -9,7 +9,7 @@ extension DetailedMovie {
                 Genre(id: 18, name: "Drama"),
                 Genre(id: 80, name: "Crime"),
             ],
-            id: "278",
+            id: 278,
             originCountry: ["US"],
             originalLanguage: "en",
             title: "The Shawshank Redemption",
@@ -23,6 +23,7 @@ extension DetailedMovie {
             popularity: 123.586,
             posterPath: "/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
             releaseDate: "1994-09-23",
+            runTime: 142,
             productionCompanies: [
                 ProductionCompany(
                     id: 97,
@@ -47,7 +48,7 @@ extension DetailedMovie {
                 Genre(id: 18, name: "Drama"),
                 Genre(id: 80, name: "Crime"),
             ],
-            id: "238",
+            id: 238,
             originCountry: ["US"],
             originalLanguage: "en",
             title: "The Godfather",
@@ -60,6 +61,7 @@ extension DetailedMovie {
             popularity: 148.891,
             posterPath: "/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
             releaseDate: "1972-03-14",
+            runTime: 175,
             productionCompanies: [
                 ProductionCompany(
                     id: 4,
@@ -96,7 +98,7 @@ extension DetailedMovie {
                 Genre(id: 18, name: "Drama"),
                 Genre(id: 80, name: "Crime"),
             ],
-            id: "240",
+            id: 240,
             originCountry: ["US"],
             originalLanguage: "en",
             title: "The Godfather Part II",
@@ -109,6 +111,7 @@ extension DetailedMovie {
             popularity: 152.722,
             posterPath: "/hek3koDUyRQk7FIhPXsa6mT2Zc3.jpg",
             releaseDate: "1974-12-20",
+            runTime: 202,
             productionCompanies: [
                 ProductionCompany(
                     id: 4,
@@ -146,7 +149,7 @@ extension DetailedMovie {
                 Genre(id: 36, name: "History"),
                 Genre(id: 10752, name: "War"),
             ],
-            id: "424",
+            id: 424,
             originCountry: ["US"],
             originalLanguage: "en",
             title: "Schindler's List",
@@ -158,6 +161,7 @@ extension DetailedMovie {
             popularity: 76.924,
             posterPath: "/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
             releaseDate: "1993-12-15",
+            runTime: 195,
             productionCompanies: [
                 ProductionCompany(
                     id: 56,

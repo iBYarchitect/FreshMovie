@@ -161,5 +161,17 @@ extension BasicMovie {
             title: "Parasite",
             voteAverage: 8.509
         )
+
+        static let basicMovies: [BasicMovie] = [
+            shawshankRedemption,
+            godfather,
+            godfatherPartII,
+            schindlersList,
+            angryMen12,
+            dilwaleDulhania,
+            spiritedAway,
+            darkKnight,
+            parasite,
+        ]
     }
 }

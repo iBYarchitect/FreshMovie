@@ -1,6 +1,6 @@
 import Foundation
 
-struct BasicMovie: Codable {
+struct BasicMovie: Codable, Identifiable {
     /// Indicates if the movie is for adults.
     let adult: Bool
 
