@@ -92,6 +92,7 @@ struct DetailedMovieView: View {
             .padding()
             .background(Color.App.grayLight)
         }
+        .navigationTitle(DetailedMovie.Dummy.shawshankRedemption.title)
     }
 }
 

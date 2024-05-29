@@ -5,15 +5,17 @@ struct HScrollMovieTileView: View {
         NavigationStack {
             VStack {
                 HStack {
-                    Text("Top 250")
+                    Text(title)
                         .font(.system(size: 20))
                         .bold()
 
                     Spacer()
 
-                    Text("More")
-                        .font(.system(size: 20))
-                        .bold()
+                    NavigationLink(destination: GridMovieView(movies: BasicMovie.Dummy.basicMovies, title: title)) {
+                        Text("More")
+                            .font(.system(size: 20))
+                            .bold()
+                    }
                 }
                 .padding(.horizontal)
 
@@ -32,6 +34,8 @@ struct HScrollMovieTileView: View {
             .background(Color.App.grayLight)
         }
     }
+
+    private let title = "Top 250"
 }
 
 #Preview {
