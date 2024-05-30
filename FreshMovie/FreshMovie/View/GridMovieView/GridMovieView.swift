@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct GridMovieView: View {
-    let movies: [BasicMovie]
+    @StateObject private var viewModel = GridMovieViewModel()
     let title: String
 
     let columns = [
@@ -12,19 +12,28 @@ struct GridMovieView: View {
 
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 0) {
-                ForEach(movies) { movie in
+            LazyVGrid(columns: columns, spacing: 20) {
+                ForEach(viewModel.movies) { movie in
                     NavigationLink(destination: DetailedMovieView()) {
                         MovieGridCellView(movie: movie)
                     }
+                    .onAppear {
+                        viewModel.loadNextPageIfNeeded(currentItem: movie)
+                    }
+                }
+                if viewModel.isLoading {
+                    ProgressView()
                 }
             }
             .padding(.vertical)
         }
         .navigationTitle(title)
+        .onAppear {
+            viewModel.loadMovies()
+        }
     }
 }
 
 #Preview {
-    GridMovieView(movies: BasicMovie.Dummy.basicMovies, title: "top 250")
+    GridMovieView(title: "Top 250")
 }

@@ -15,7 +15,7 @@ struct HScrollMovieTileView: View {
 
                     Spacer()
 
-                    NavigationLink(destination: GridMovieView(movies: viewModel.movies, title: title)) {
+                    NavigationLink(destination: GridMovieView(title: title)) {
                         Text(moreTitle)
                             .font(
                                 .system(

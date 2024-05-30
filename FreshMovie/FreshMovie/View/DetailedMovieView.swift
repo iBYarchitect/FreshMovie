@@ -47,7 +47,7 @@ struct DetailedMovieView: View {
             }
 
             VStack(alignment: .leading) {
-                Text("Overview:")
+                Text(overview)
                     .font(.system(size: 20))
                     .bold()
 
@@ -58,7 +58,7 @@ struct DetailedMovieView: View {
 
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Box office:")
+                    Text(boxOffice)
                         .font(.system(size: 20))
                         .bold()
 
@@ -74,13 +74,13 @@ struct DetailedMovieView: View {
 
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Details:")
+                    Text(details)
                         .font(.system(size: 20))
                         .bold()
 
                     Text("Country: \(DetailedMovie.Dummy.shawshankRedemption.originCountry.joined(separator: ", "))")
                     VStack(alignment: .leading) {
-                        Text("Production:")
+                        Text(production)
                         ForEach(DetailedMovie.Dummy.shawshankRedemption.productionCompanies) { company in
                             Text("\(company.name) (\(company.originCountry))")
                         }
@@ -94,6 +94,13 @@ struct DetailedMovieView: View {
         }
         .navigationTitle(DetailedMovie.Dummy.shawshankRedemption.title)
     }
+
+    // MARK: - Private interface
+
+    private let overview = "Overview:"
+    private let boxOffice = "Box office:"
+    private let details = "Details:"
+    private let production = "Production:"
 }
 
 #Preview {

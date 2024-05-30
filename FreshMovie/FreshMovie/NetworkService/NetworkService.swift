@@ -14,4 +14,15 @@ struct NetworkService {
             throw error
         }
     }
+
+    func fetchMoviesForPage(page: Int, endpoint: TMDBAPI) async throws -> TopRatedResponse {
+        let parameters: [String: Any] = ["page": page]
+        do {
+            let request = AF.request(endpoint.url, method: .get, parameters: parameters, headers: endpoint.headers)
+            let response = try await request.validate().serializingDecodable(TopRatedResponse.self).value
+            return response
+        } catch {
+            throw error
+        }
+    }
 }
