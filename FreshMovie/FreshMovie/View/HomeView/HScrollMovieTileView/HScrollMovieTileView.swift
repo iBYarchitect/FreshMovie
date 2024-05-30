@@ -15,7 +15,7 @@ struct HScrollMovieTileView: View {
 
                     Spacer()
 
-                    NavigationLink(destination: GridMovieView(movies: BasicMovie.Dummy.basicMovies, title: title)) {
+                    NavigationLink(destination: GridMovieView(movies: viewModel.movies, title: title)) {
                         Text(moreTitle)
                             .font(
                                 .system(
@@ -27,24 +27,36 @@ struct HScrollMovieTileView: View {
                 }
                 .padding(.horizontal)
 
-                ScrollView(.horizontal) {
-                    HStack {
-                        ForEach(BasicMovie.Dummy.basicMovies) { movie in
-                            NavigationLink(destination: DetailedMovieView()) {
-                                MovieMiniatureView(movie: movie)
+                if viewModel.isLoading {
+                    ProgressView()
+                } else if let errorMessage = viewModel.errorMessage {
+                    Text(errorMessage)
+                } else {
+                    ScrollView(.horizontal) {
+                        HStack(spacing: 10) {
+                            ForEach(viewModel.movies) { movie in
+                                NavigationLink(destination: DetailedMovieView()) {
+                                    MovieMiniatureView(movie: movie)
+                                }
                             }
                         }
+                        .padding()
                     }
-                    .foregroundColor(.black)
-                    .padding()
                 }
             }
-            .frame(height: scrollBlockHeight)
-            .background(Color.App.grayLight)
+            .frame(height: 400)
+            .background(Color.gray.opacity(0.2))
+        }
+        .onAppear {
+            Task {
+                await viewModel.fetchTopRatedMovies()
+            }
         }
     }
 
     // MARK: - Private interface
+
+    @StateObject private var viewModel = HScrollMovieTileViewModel()
 
     private let title = "Top 250"
     private let moreTitle = "More"
