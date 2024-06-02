@@ -23,7 +23,6 @@ struct DetailedMovieView: View {
                     ) { image in
                         image
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
                     } placeholder: {
                         Color.gray
                     }
