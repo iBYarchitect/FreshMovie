@@ -12,7 +12,7 @@ struct GridMovieView: View {
 
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 20) {
+            LazyVGrid(columns: columns, spacing: 0) {
                 ForEach(viewModel.movies) { movie in
                     NavigationLink(destination: DetailedMovieView()) {
                         MovieGridCellView(movie: movie)

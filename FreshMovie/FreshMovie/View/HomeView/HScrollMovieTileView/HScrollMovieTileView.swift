@@ -44,7 +44,7 @@ struct HScrollMovieTileView: View {
                     }
                 }
             }
-            .frame(height: 400)
+            .frame(height: scrollBlockHeight)
             .background(Color.gray.opacity(0.2))
         }
         .onAppear {
