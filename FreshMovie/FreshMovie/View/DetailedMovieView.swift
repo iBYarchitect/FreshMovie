@@ -19,7 +19,7 @@ struct DetailedMovieView: View {
             } else if let movie = viewModel.movie {
                 ZStack(alignment: .bottom) {
                     AsyncImage(
-                        url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.backdropPath ?? "")")
+                        url: viewModel.backdropURL()
                     ) { image in
                         image
                             .resizable()

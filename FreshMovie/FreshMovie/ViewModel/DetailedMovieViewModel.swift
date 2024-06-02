@@ -24,4 +24,11 @@ final class DetailedMovieViewModel: ObservableObject {
             isLoading = false
         }
     }
+
+    func backdropURL() -> URL? {
+        guard let backdropPath = movie?.backdropPath else {
+            return nil
+        }
+        return URL(string: "https://image.tmdb.org/t/p/w500\(backdropPath)")
+    }
 }
