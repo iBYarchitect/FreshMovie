@@ -13,4 +13,11 @@ struct ProductionCompany: Codable, Identifiable {
 
     /// The country where the production company is based.
     let originCountry: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case logoPath = "logo_path"
+        case name
+        case originCountry = "origin_country"
+    }
 }

@@ -22,6 +22,7 @@ extension DetailedMovie {
             """,
             popularity: 123.586,
             posterPath: "/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
+            backdropPath: "/zfbjgQE1uSd9wiPTX4VzsLi0rGG.jpg",
             releaseDate: "1994-09-23",
             runTime: 142,
             productionCompanies: [
@@ -60,6 +61,7 @@ extension DetailedMovie {
             """,
             popularity: 148.891,
             posterPath: "/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+            backdropPath: "/tmU7GeKVybMWFButWEGl2M4GeiP.jpg",
             releaseDate: "1972-03-14",
             runTime: 175,
             productionCompanies: [
@@ -110,6 +112,7 @@ extension DetailedMovie {
             """,
             popularity: 152.722,
             posterPath: "/hek3koDUyRQk7FIhPXsa6mT2Zc3.jpg",
+            backdropPath: "/kGzFbGhp99zva6oZODW5atUtnqi.jpg",
             releaseDate: "1974-12-20",
             runTime: 202,
             productionCompanies: [
@@ -160,6 +163,7 @@ extension DetailedMovie {
             """,
             popularity: 76.924,
             posterPath: "/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
+            backdropPath: "/zb6fM1CX41D9rF9hdgclu0peUmy.jpg",
             releaseDate: "1993-12-15",
             runTime: 195,
             productionCompanies: [
