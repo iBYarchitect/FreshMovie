@@ -5,9 +5,12 @@ struct MovieMiniatureView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Image("shawshankRedemptionPoster")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath ?? "")")) { image in
+                image.resizable()
+            } placeholder: {
+                Color.gray
+            }
+            .aspectRatio(contentMode: .fit)
 
             VStack(alignment: .leading) {
                 Text("\(movie.voteAverage)")
