@@ -35,7 +35,7 @@ struct HScrollMovieTileView: View {
                     ScrollView(.horizontal) {
                         HStack(spacing: 10) {
                             ForEach(viewModel.movies) { movie in
-                                NavigationLink(destination: DetailedMovieView()) {
+                                NavigationLink(destination: DetailedMovieView(movieID: movie.id)) {
                                     MovieMiniatureView(movie: movie)
                                 }
                             }

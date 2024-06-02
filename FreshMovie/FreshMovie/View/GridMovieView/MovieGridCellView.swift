@@ -6,8 +6,11 @@ struct MovieGridCellView: View {
     var body: some View {
         VStack(alignment: .leading) {
             ZStack(alignment: .bottom) {
-                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath ?? "")")) { image in
-                    image.resizable()
+                AsyncImage(
+                    url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath ?? "")")
+                ) { image in
+                    image
+                        .resizable()
                 } placeholder: {
                     Color.gray
                 }

@@ -33,6 +33,9 @@ struct DetailedMovie: Codable {
     /// The path to the poster image of the movie. This can be combined with a base URL to form the full URL.
     let posterPath: String?
 
+    /// The path to the backdrop image of the movie. This can be combined with a base URL to form the full URL.
+    let backdropPath: String?
+
     /// The release date of the movie in the format "YYYY-MM-DD".
     let releaseDate: String
 

@@ -1,108 +1,163 @@
 import SwiftUI
 
 struct DetailedMovieView: View {
+    /// Initializes a new instance of `DetailedMovieView` with the given movie ID.
+    ///
+    /// - Parameter movieID: The unique identifier of the movie to be displayed in this view.
+    ///
+    /// This initializer creates an instance of `DetailedMovieViewModel` with the provided `movieID`
+    /// and assigns it to the `_viewModel` property. This ensures that the view model is properly
+    /// initialized and can be used to fetch and display detailed information about the specified movie.
+    init(movieID: Int) {
+        _viewModel = StateObject(wrappedValue: DetailedMovieViewModel(movieID: movieID))
+    }
+
     var body: some View {
         ScrollView {
-            ZStack(alignment: .bottom) {
-                Image("shawshankBackDrop")
-                    .resizable()
+            if viewModel.isLoading {
+                ProgressView()
+            } else if let movie = viewModel.movie {
+                ZStack(alignment: .bottom) {
+                    AsyncImage(
+                        url: viewModel.backdropURL()
+                    ) { image in
+                        image
+                            .resizable()
+                    } placeholder: {
+                        Color.gray
+                    }
                     .aspectRatio(contentMode: .fit)
 
-                VStack(alignment: .leading) {
-                    Text(DetailedMovie.Dummy.shawshankRedemption.title)
-                        .font(.system(size: 20))
-                        .foregroundColor(.white)
-
-                    HStack {
-                        Text(DetailedMovie.Dummy.shawshankRedemption.releaseDate)
-                            .foregroundColor(.white)
-
-                        Text("   ")
-
-                        Text("\(DetailedMovie.Dummy.shawshankRedemption.runTime) min")
-                            .foregroundColor(.white)
-
-                        Spacer()
-                    }
-                }
-                .padding()
-                .background(
-                    Color.black.opacity(0.5)
-                        .blur(radius: 10)
-                )
-            }
-            .edgesIgnoringSafeArea(.all)
-
-            ScrollView(.horizontal) {
-                HStack {
-                    ForEach(DetailedMovie.Dummy.shawshankRedemption.genres, id: \.id) { genre in
-                        Text(genre.name)
-                            .padding()
-                            .background(Color.App.grayDark)
-                            .foregroundColor(.white)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                    }
-                }
-                .padding()
-            }
-
-            VStack(alignment: .leading) {
-                Text(overview)
-                    .font(.system(size: 20))
-                    .bold()
-
-                Text(DetailedMovie.Dummy.shawshankRedemption.overview)
-            }
-            .padding()
-            .background(Color.App.grayLight)
-
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(boxOffice)
-                        .font(.system(size: 20))
-                        .bold()
-
-                    Text("Budget: \(DetailedMovie.Dummy.shawshankRedemption.budget)")
-
-                    Text("Revenue: \(DetailedMovie.Dummy.shawshankRedemption.revenue)")
-                }
-
-                Spacer()
-            }
-            .padding()
-            .background(Color.App.grayLight)
-
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(details)
-                        .font(.system(size: 20))
-                        .bold()
-
-                    Text("Country: \(DetailedMovie.Dummy.shawshankRedemption.originCountry.joined(separator: ", "))")
                     VStack(alignment: .leading) {
-                        Text(production)
-                        ForEach(DetailedMovie.Dummy.shawshankRedemption.productionCompanies) { company in
-                            Text("\(company.name) (\(company.originCountry))")
+                        Text(movie.title)
+                            .font(
+                                .system(
+                                    size: AppStyle.FontStyle.body.size
+                                )
+                            )
+                            .foregroundStyle(Color.white)
+
+                        HStack {
+                            Text(movie.releaseDate)
+                                .font(
+                                    .system(
+                                        size: AppStyle.FontStyle.body.size
+                                    )
+                                )
+                                .foregroundColor(.white)
+
+                            Text("   ")
+
+                            Text("\(movie.runTime) \(minutes)")
+                                .font(
+                                    .system(
+                                        size: AppStyle.FontStyle.body.size
+                                    )
+                                )
+                                .foregroundColor(.white)
+
+                            Spacer()
                         }
                     }
+                    .padding()
+                    .background {
+                        Color.black.opacity(AppStyle.UIElementConstant.opacity)
+                            .blur(radius: AppStyle.UIElementConstant.blurRadius)
+                    }
+                }
+                .edgesIgnoringSafeArea(.all)
+
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(movie.genres, id: \.id) { genre in
+                            Text(genre.name)
+                                .padding()
+                                .background(Color.App.grayDark)
+                                .foregroundColor(.white)
+                                .clipShape(RoundedRectangle(cornerRadius: AppStyle.UIElementConstant.cornerRadius))
+                        }
+                    }
+                    .padding()
                 }
 
-                Spacer()
+                VStack(alignment: .leading) {
+                    Text(overview)
+                        .font(
+                            .system(
+                                size: AppStyle.FontStyle.heading.size,
+                                weight: .bold
+                            )
+                        )
+
+                    Text(movie.overview)
+                }
+                .padding()
+                .background(Color.App.grayLight)
+
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(boxOffice)
+                            .font(
+                                .system(
+                                    size: AppStyle.FontStyle.heading.size,
+                                    weight: .bold
+                                )
+                            )
+
+                        Text("\(budget) \(movie.budget)")
+
+                        Text("\(revenue) \(movie.revenue)")
+                    }
+
+                    Spacer()
+                }
+                .padding()
+                .background(Color.App.grayLight)
+
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(details)
+                            .font(.system(size: 20))
+                            .bold()
+
+                        Text("\(country) \(movie.originCountry.joined(separator: ", "))")
+                        VStack(alignment: .leading) {
+                            Text(production)
+                            ForEach(movie.productionCompanies) { company in
+                                Text("\(company.name) (\(company.originCountry))")
+                            }
+                        }
+                    }
+
+                    Spacer()
+                }
+                .padding()
+                .background(Color.App.grayLight)
+            } else if let errorMessage = viewModel.errorMessage {
+                Text(errorMessage)
             }
-            .padding()
-            .background(Color.App.grayLight)
         }
-        .navigationTitle(DetailedMovie.Dummy.shawshankRedemption.title)
+        .navigationTitle(viewModel.movie?.title ?? loadingTitle)
+        .task {
+            await viewModel.fetchMovieDetails()
+        }
     }
 
     // MARK: - Private interface
+
+    @StateObject private var viewModel: DetailedMovieViewModel
 
     private let overview = "Overview:"
     private let boxOffice = "Box office:"
     private let details = "Details:"
     private let production = "Production:"
+    private let budget = "Budget:"
+    private let revenue = "Revenue:"
+    private let minutes = "min"
+    private let country = "Country:"
+    private let loadingTitle = "Loading..."
 }
 
 #Preview {
-    DetailedMovieView()
+    DetailedMovieView(movieID: 278)
 }
