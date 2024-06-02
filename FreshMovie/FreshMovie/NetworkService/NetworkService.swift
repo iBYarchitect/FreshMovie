@@ -25,4 +25,16 @@ struct NetworkService {
             throw error
         }
     }
+
+    func fetchMovieDetails(movieID: Int) async throws -> DetailedMovie {
+        let endpoint = TMDBAPI.getMovieDetails(movieID: movieID)
+        do {
+            let request = AF.request(endpoint.url, method: endpoint.method, headers: endpoint.headers)
+            let response = try await request.validate().serializingDecodable(DetailedMovie.self).value
+            return response
+        } catch {
+            print("Failed to fetch movie details: \(error)")
+            throw error
+        }
+    }
 }
