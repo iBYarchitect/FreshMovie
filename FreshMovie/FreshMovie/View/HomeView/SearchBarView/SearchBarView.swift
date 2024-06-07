@@ -1,34 +1,42 @@
 import SwiftUI
 
 struct SearchBarView: View {
-    var body: some View {
-        VStack {
-            TextField(
-                "Search for \(viewModel.searchMode == .movie ? "movies" : "items")...",
-                text: $viewModel.searchText
-            )
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .padding()
-            .submitLabel(.go)
-            .onSubmit {
-                viewModel.search()
-            }
+    @StateObject private var viewModel = SearchBarViewModel()
+    @State private var selectedMovie: BasicMovie?
 
-            if viewModel.isLoading {
-                ProgressView()
-            } else {
-                List(viewModel.movies) { movie in
-                    MovieSearchCell(movie: movie)
-                        .listRowInsets(EdgeInsets())
+    var body: some View {
+        NavigationSplitView {
+            VStack {
+                TextField(
+                    "Search for \(viewModel.searchMode == .movie ? "movies" : "items")...",
+                    text: $viewModel.searchText
+                )
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+                .submitLabel(.go)
+                .onSubmit {
+                    viewModel.search()
                 }
-                .listStyle(.plain)
-                .listRowSeparator(.hidden)
+
+                if viewModel.isLoading {
+                    ProgressView()
+                } else {
+                    List(viewModel.movies, id: \.self, selection: $selectedMovie) { movie in
+                        MovieSearchCell(movie: movie)
+                            .listRowInsets(EdgeInsets())
+                    }
+                    .listStyle(.plain)
+                    .listRowSeparator(.hidden)
+                }
+            }
+        } detail: {
+            if let selectedMovie {
+                DetailedMovieView(movieID: selectedMovie.id)
+            } else {
+                Text("Pick a movie")
             }
         }
-        .navigationTitle("Movie Search")
     }
-
-    @StateObject private var viewModel = SearchBarViewModel()
 }
 
 #Preview {
