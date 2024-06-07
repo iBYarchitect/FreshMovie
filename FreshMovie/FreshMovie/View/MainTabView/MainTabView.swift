@@ -8,9 +8,9 @@ struct MainTabView: View {
                     Label("Home", systemImage: "house.fill")
                 }
 
-            FavouritesView()
+            SearchView()
                 .tabItem {
-                    Label("Favourites", systemImage: "heart.fill")
+                    Label("Search", systemImage: "magnifyingglass")
                 }
 
             ProfileView()
