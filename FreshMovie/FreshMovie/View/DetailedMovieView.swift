@@ -81,13 +81,17 @@ struct DetailedMovieView: View {
                 }
 
                 VStack(alignment: .leading) {
-                    Text(overview)
-                        .font(
-                            .system(
-                                size: AppStyle.FontStyle.heading.size,
-                                weight: .bold
+                    HStack {
+                        Text(overview)
+                            .font(
+                                .system(
+                                    size: AppStyle.FontStyle.heading.size,
+                                    weight: .bold
+                                )
                             )
-                        )
+
+                        Spacer()
+                    }
 
                     Text(movie.overview)
                 }
