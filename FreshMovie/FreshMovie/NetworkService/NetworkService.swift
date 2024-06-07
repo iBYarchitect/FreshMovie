@@ -4,36 +4,23 @@ import Foundation
 struct NetworkService {
     static let shared = NetworkService()
 
-    func fetchMovies(endpoint: TMDBAPI) async throws -> [BasicMovie] {
-        do {
-            let request = AF.request(endpoint.url, method: endpoint.method, headers: endpoint.headers)
-            let response = try await request.serializingDecodable(TopRatedResponse.self).value
-            return response.results
-        } catch {
-            print("Failed to fetch movies: \(error)")
-            throw error
-        }
+    func request<T: Decodable>(endpoint: TMDBAPI, page: Int? = nil) async throws -> T {
+        let parameters: [String: Any]? = page != nil ? ["page": page ?? 1] : nil
+        return try await performRequest(endpoint: endpoint, parameters: parameters)
     }
 
-    func fetchMoviesForPage(page: Int, endpoint: TMDBAPI) async throws -> TopRatedResponse {
-        let parameters: [String: Any] = ["page": page]
+    private func performRequest<T: Decodable>(endpoint: TMDBAPI, parameters: [String: Any]? = nil) async throws -> T {
         do {
-            let request = AF.request(endpoint.url, method: .get, parameters: parameters, headers: endpoint.headers)
-            let response = try await request.validate().serializingDecodable(TopRatedResponse.self).value
+            let request = AF.request(
+                endpoint.url,
+                method: endpoint.method,
+                parameters: parameters,
+                headers: endpoint.headers
+            )
+            let response = try await request.validate().serializingDecodable(T.self).value
             return response
         } catch {
-            throw error
-        }
-    }
-
-    func fetchMovieDetails(movieID: Int) async throws -> DetailedMovie {
-        let endpoint = TMDBAPI.getMovieDetails(movieID: movieID)
-        do {
-            let request = AF.request(endpoint.url, method: endpoint.method, headers: endpoint.headers)
-            let response = try await request.validate().serializingDecodable(DetailedMovie.self).value
-            return response
-        } catch {
-            print("Failed to fetch movie details: \(error)")
+            print("Failed to perform request: \(error)")
             throw error
         }
     }
