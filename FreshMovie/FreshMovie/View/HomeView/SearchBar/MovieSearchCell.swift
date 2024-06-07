@@ -16,46 +16,39 @@ struct MovieSearchCell: View {
             .aspectRatio(contentMode: .fit)
 
             VStack(alignment: .leading) {
+                Divider()
+
+                Spacer()
+
                 Text(movie.title)
                     .font(
                         .system(
-                            size: AppStyle.FontStyle.footnote.size
+                            size: AppStyle.FontStyle.body.size
                         )
                     )
-                    .lineLimit(1)
 
                 Text(movie.releaseDate)
                     .font(
                         .system(
-                            size: AppStyle.FontStyle.footnote.size
+                            size: AppStyle.FontStyle.body.size
                         )
                     )
                     .lineLimit(1)
 
-                HStack {
-                    ForEach(movie.genreIds, id: \.id) { genre in
-                        Text(genre.name)
-                            .padding()
-                            .background(Color.App.grayDark)
-                            .foregroundColor(.white)
-                            .clipShape(RoundedRectangle(cornerRadius: AppStyle.UIElementConstant.cornerRadius))
-                    }
-                }
-                .padding()
+                Spacer()
+
+                Divider()
             }
-            .padding()
+
+            Spacer()
         }
-        .frame(height: cardWidth)
+        .frame(height: cardHeight)
         .background(Color.white)
-//        .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius))
-//        .shadow(radius: shadowRadius)
     }
 
     // MARK: - Private interface
 
-    private let cardWidth: CGFloat = 125
-    private let cardCornerRadius: CGFloat = 10
-    private let shadowRadius: CGFloat = 5
+    private let cardHeight: CGFloat = 100
 }
 
 #Preview {
