@@ -9,7 +9,8 @@ final class HScrollMovieTileViewModel: ObservableObject {
     func fetchTopRatedMovies() async {
         isLoading = true
         do {
-            movies = try await NetworkService.shared.fetchMovies(endpoint: .getTopRated)
+            let response: TopRatedResponse = try await NetworkService.shared.request(endpoint: .getTopRated)
+            movies = response.results
             isLoading = false
         } catch {
             isLoading = false

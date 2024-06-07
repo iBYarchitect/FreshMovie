@@ -16,7 +16,11 @@ final class DetailedMovieViewModel: ObservableObject {
         errorMessage = nil
 
         do {
-            let movie = try await NetworkService.shared.fetchMovieDetails(movieID: movieID)
+            let movie: DetailedMovie = try await NetworkService.shared.request(
+                endpoint: .getMovieDetails(
+                    movieID: movieID
+                )
+            )
             self.movie = movie
             isLoading = false
         } catch {
