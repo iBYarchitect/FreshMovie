@@ -12,17 +12,15 @@ extension TMDBAPI {
     var url: URL {
         switch self {
         case .getTopRated:
-            TMDBAPI.baseURL.appendingPathComponent(TMDBAPI.Path.topRated)
-        case let .getMovieDetails(movieID: movieID):
-            TMDBAPI.baseURL.appendingPathComponent("\(TMDBAPI.Path.movieDetails)\(movieID)")
+            return TMDBAPI.baseURL.appendingPathComponent(TMDBAPI.Path.topRated)
+        case let .getMovieDetails(movieID):
+            return TMDBAPI.baseURL.appendingPathComponent("\(TMDBAPI.Path.movieDetails)\(movieID)")
         }
     }
 
     var method: HTTPMethod {
         switch self {
-        case .getTopRated:
-            .get
-        case .getMovieDetails:
+        case .getTopRated, .getMovieDetails:
             .get
         }
     }

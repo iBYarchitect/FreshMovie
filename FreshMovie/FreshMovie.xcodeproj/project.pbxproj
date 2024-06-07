@@ -96,7 +96,6 @@
 				361C74C82C07B62D000A70E4 /* TMDBAPI.swift */,
 				361C74CA2C07B6F2000A70E4 /* TMDBAPIEndpoint.swift */,
 				361C74CC2C07C124000A70E4 /* NetworkService.swift */,
-				361C74D02C087C37000A70E4 /* TopRatedResponse.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -188,6 +187,7 @@
 		363BF2402BF762AC00A5F19E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				36C8D3112C131F32001C1AB1 /* Response */,
 				362EF75F2C05CFFD00628652 /* BasicMovie */,
 				362EF7622C05E1FD00628652 /* DetailedMovie */,
 			);
@@ -255,6 +255,14 @@
 				36BE22DD2BEBA3FC0042A987 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		36C8D3112C131F32001C1AB1 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				361C74D02C087C37000A70E4 /* TopRatedResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

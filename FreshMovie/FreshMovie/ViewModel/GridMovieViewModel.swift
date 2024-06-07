@@ -14,9 +14,9 @@ class GridMovieViewModel: ObservableObject {
 
         Task {
             do {
-                let response = try await NetworkService.shared.fetchMoviesForPage(
-                    page: currentPage,
-                    endpoint: .getTopRated
+                let response: TopRatedResponse = try await NetworkService.shared.request(
+                    endpoint: .getTopRated,
+                    page: currentPage
                 )
                 if currentPage == 1 {
                     movies = response.results
