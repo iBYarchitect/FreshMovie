@@ -12,26 +12,33 @@ extension TMDBAPI {
     var url: URL {
         switch self {
         case .getTopRated:
-            return TMDBAPI.baseURL.appendingPathComponent(TMDBAPI.Path.topRated)
+            return TMDBAPI.baseURL.appending(path: TMDBAPI.Path.topRated)
         case let .getMovieDetails(movieID):
-            return TMDBAPI.baseURL.appendingPathComponent("\(TMDBAPI.Path.movieDetails)\(movieID)")
-        case .searchMovies:
-            return TMDBAPI.baseURL.appendingPathComponent(TMDBAPI.Path.searchMovies)
+            return TMDBAPI.baseURL.appending(path: "\(TMDBAPI.Path.movieDetails)\(movieID)")
+        case .getSearchMovies:
+            return TMDBAPI.baseURL.appending(path: TMDBAPI.Path.searchMovies)
+        case .getNowPlaying:
+            return TMDBAPI.baseURL.appending(path: TMDBAPI.Path.nowPlaying)
         }
     }
 
     var method: HTTPMethod {
         switch self {
-        case .getTopRated, .getMovieDetails, .searchMovies:
+        case .getTopRated,
+             .getMovieDetails,
+             .getSearchMovies,
+             .getNowPlaying:
             .get
         }
     }
 
     var parameters: [String: Any]? {
         switch self {
-        case .getTopRated, .getMovieDetails:
+        case .getTopRated,
+             .getMovieDetails,
+             .getNowPlaying:
             return nil
-        case let .searchMovies(query):
+        case let .getSearchMovies(query):
             return ["query": query]
         }
     }
