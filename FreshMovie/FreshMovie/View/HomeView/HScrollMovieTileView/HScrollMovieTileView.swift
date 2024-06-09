@@ -33,7 +33,7 @@ struct HScrollMovieTileView: View {
                     Text(errorMessage)
                 } else {
                     ScrollView(.horizontal) {
-                        HStack(spacing: 10) {
+                        HStack(spacing: AppStyle.UIElementConstant.horizontalSpacing) {
                             ForEach(viewModel.movies) { movie in
                                 NavigationLink(destination: DetailedMovieView(movieID: movie.id)) {
                                     MovieMiniatureView(movie: movie)
@@ -45,7 +45,7 @@ struct HScrollMovieTileView: View {
                 }
             }
             .frame(height: scrollBlockHeight)
-            .background(Color.gray.opacity(0.2))
+            .background(Color.App.grayLight)
         }
         .onAppear {
             Task {

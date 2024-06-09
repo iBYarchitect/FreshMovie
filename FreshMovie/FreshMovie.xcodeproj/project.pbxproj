@@ -149,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				362EF7632C05E64900628652 /* HScrollMovieTileView.swift */,
-				362EF7652C05E8E300628652 /* MovieMiniatureView.swift */,
 			);
 			path = HScrollMovieTileView;
 			sourceTree = "<group>";
@@ -165,6 +164,7 @@
 		362EF7792C07488F00628652 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				36B0C97B2C16029E00A58EBE /* NowPlayingView */,
 				363BF2462BF7642000A5F19E /* HomeView.swift */,
 				362EF7772C07481200628652 /* HScrollMovieTileView */,
 			);
@@ -210,6 +210,7 @@
 		363BF2412BF762B200A5F19E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				36B0C97C2C1603F100A58EBE /* ReusableViews */,
 				362EF7782C07487E00628652 /* MainTabView */,
 				362EF7792C07488F00628652 /* HomeView */,
 				362EF77A2C0748B500628652 /* SearchView */,
@@ -238,6 +239,21 @@
 				366191D22C109D7E00C46554 /* MovieSearchCellView.swift */,
 			);
 			path = SearchBarView;
+			sourceTree = "<group>";
+		};
+		36B0C97B2C16029E00A58EBE /* NowPlayingView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NowPlayingView;
+			sourceTree = "<group>";
+		};
+		36B0C97C2C1603F100A58EBE /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				362EF7652C05E8E300628652 /* MovieMiniatureView.swift */,
+			);
+			path = ReusableViews;
 			sourceTree = "<group>";
 		};
 		36BE22CA2BEBA3FA0042A987 = {
