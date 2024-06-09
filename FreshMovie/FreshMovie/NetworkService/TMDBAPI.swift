@@ -3,8 +3,8 @@ import Foundation
 enum TMDBAPI {
     case getTopRated
     case getMovieDetails(movieID: Int)
-    case searchMovies(query: String)
-    case nowPlaying
+    case getSearchMovies(query: String)
+    case getNowPlaying
 
     enum Path {
         static let topRated = "3/movie/top_rated"

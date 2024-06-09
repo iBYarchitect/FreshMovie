@@ -35,7 +35,7 @@ class SearchBarViewModel: ObservableObject {
     private func fetchMovies(query: String) async throws -> MovieSearchResponse {
         switch searchMode {
         case .movie:
-            try await NetworkService.shared.request(endpoint: .searchMovies(query: query))
+            try await NetworkService.shared.request(endpoint: .getSearchMovies(query: query))
         }
     }
 }
