@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct MovieSearchCell: View {
+struct MovieSearchCellView: View {
     let movie: BasicMovie
 
     var body: some View {
@@ -52,5 +52,5 @@ struct MovieSearchCell: View {
 }
 
 #Preview {
-    MovieSearchCell(movie: BasicMovie.Dummy.godfather)
+    MovieSearchCellView(movie: BasicMovie.Dummy.godfather)
 }

@@ -22,7 +22,7 @@ struct SearchBarView: View {
                     ProgressView()
                 } else {
                     List(viewModel.movies, id: \.self, selection: $selectedMovie) { movie in
-                        MovieSearchCell(movie: movie)
+                        MovieSearchCellView(movie: movie)
                             .listRowInsets(EdgeInsets())
                     }
                     .listStyle(.plain)
