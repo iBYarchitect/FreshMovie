@@ -121,8 +121,12 @@ struct DetailedMovieView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         Text(details)
-                            .font(.system(size: 20))
-                            .bold()
+                            .font(
+                                .system(
+                                    size: AppStyle.FontStyle.heading.size,
+                                    weight: .bold
+                                )
+                            )
 
                         Text("\(country) \(movie.originCountry.joined(separator: ", "))")
                         VStack(alignment: .leading) {
