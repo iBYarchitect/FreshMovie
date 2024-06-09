@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct HScrollMovieTileView: View {
+struct Top250View: View {
     var body: some View {
         NavigationStack {
             VStack {
@@ -64,5 +64,5 @@ struct HScrollMovieTileView: View {
 }
 
 #Preview {
-    HScrollMovieTileView()
+    Top250View()
 }
