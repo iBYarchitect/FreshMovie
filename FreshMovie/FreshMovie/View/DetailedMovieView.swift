@@ -81,13 +81,17 @@ struct DetailedMovieView: View {
                 }
 
                 VStack(alignment: .leading) {
-                    Text(overview)
-                        .font(
-                            .system(
-                                size: AppStyle.FontStyle.heading.size,
-                                weight: .bold
+                    HStack {
+                        Text(overview)
+                            .font(
+                                .system(
+                                    size: AppStyle.FontStyle.heading.size,
+                                    weight: .bold
+                                )
                             )
-                        )
+
+                        Spacer()
+                    }
 
                     Text(movie.overview)
                 }
@@ -117,8 +121,12 @@ struct DetailedMovieView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         Text(details)
-                            .font(.system(size: 20))
-                            .bold()
+                            .font(
+                                .system(
+                                    size: AppStyle.FontStyle.heading.size,
+                                    weight: .bold
+                                )
+                            )
 
                         Text("\(country) \(movie.originCountry.joined(separator: ", "))")
                         VStack(alignment: .leading) {
