@@ -17,19 +17,26 @@ extension TMDBAPI {
             return TMDBAPI.baseURL.appendingPathComponent("\(TMDBAPI.Path.movieDetails)\(movieID)")
         case .searchMovies:
             return TMDBAPI.baseURL.appendingPathComponent(TMDBAPI.Path.searchMovies)
+        case .nowPlaying:
+            return TMDBAPI.baseURL.appending(path: TMDBAPI.Path.nowPlaying)
         }
     }
 
     var method: HTTPMethod {
         switch self {
-        case .getTopRated, .getMovieDetails, .searchMovies:
+        case .getTopRated,
+             .getMovieDetails,
+             .searchMovies,
+             .nowPlaying:
             .get
         }
     }
 
     var parameters: [String: Any]? {
         switch self {
-        case .getTopRated, .getMovieDetails:
+        case .getTopRated,
+             .getMovieDetails,
+             .nowPlaying:
             return nil
         case let .searchMovies(query):
             return ["query": query]
