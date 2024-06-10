@@ -23,7 +23,7 @@ struct BasicMovie: Decodable, Equatable, Identifiable, Hashable {
     let posterPath: String?
 
     /// The release date of the movie in the format "YYYY-MM-DD".
-    let releaseDate: String
+    var releaseDate: String
 
     /// The title of the movie.
     let title: String
