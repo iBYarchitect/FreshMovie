@@ -1,18 +1,14 @@
 import SwiftUI
 
 struct GridMovieView: View {
-    @StateObject private var viewModel = GridMovieViewModel()
     let title: String
-
-    let columns = [
-        GridItem(.flexible(), spacing: 0),
-        GridItem(.flexible(), spacing: 0),
-        GridItem(.flexible(), spacing: 0),
-    ]
 
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 0) {
+            LazyVGrid(
+                columns: columns,
+                spacing: 0
+            ) {
                 ForEach(viewModel.movies) { movie in
                     NavigationLink(destination: DetailedMovieView(movieID: movie.id)) {
                         MovieGridCellView(movie: movie)
@@ -32,6 +28,15 @@ struct GridMovieView: View {
             viewModel.loadMovies()
         }
     }
+
+    // MARK: - Private interface
+
+    @StateObject private var viewModel = GridMovieViewModel()
+    private let columns = [
+        GridItem(.flexible(), spacing: 0),
+        GridItem(.flexible(), spacing: 0),
+        GridItem(.flexible(), spacing: 0),
+    ]
 }
 
 #Preview {

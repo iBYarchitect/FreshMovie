@@ -2,7 +2,15 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        HScrollMovieTileView()
+        NavigationStack {
+            ScrollView {
+                VStack {
+                    TopRatedMoviesView()
+
+                    NowPlayingView()
+                }
+            }
+        }
     }
 }
 

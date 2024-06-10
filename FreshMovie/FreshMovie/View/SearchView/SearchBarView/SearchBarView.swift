@@ -1,9 +1,6 @@
 import SwiftUI
 
 struct SearchBarView: View {
-    @StateObject private var viewModel = SearchBarViewModel()
-    @State private var selectedMovie: BasicMovie?
-
     var body: some View {
         NavigationSplitView {
             VStack {
@@ -22,7 +19,7 @@ struct SearchBarView: View {
                     ProgressView()
                 } else {
                     List(viewModel.movies, id: \.self, selection: $selectedMovie) { movie in
-                        MovieSearchCellView(movie: movie)
+                        MovieCellView(movie: movie)
                             .listRowInsets(EdgeInsets())
                     }
                     .listStyle(.plain)
@@ -37,6 +34,11 @@ struct SearchBarView: View {
             }
         }
     }
+
+    // MARK: - Private interface
+
+    @StateObject private var viewModel = SearchBarViewModel()
+    @State private var selectedMovie: BasicMovie?
 }
 
 #Preview {

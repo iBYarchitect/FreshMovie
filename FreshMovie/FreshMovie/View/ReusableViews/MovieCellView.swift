@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct MovieSearchCellView: View {
+struct MovieCellView: View {
     let movie: BasicMovie
 
     var body: some View {
@@ -27,13 +27,23 @@ struct MovieSearchCellView: View {
                         )
                     )
 
-                Text(movie.releaseDate)
-                    .font(
-                        .system(
-                            size: AppStyle.FontStyle.body.size
+                HStack {
+                    Text("\(movie.voteAverage)")
+                        .font(
+                            .system(
+                                size: AppStyle.FontStyle.body.size
+                            )
                         )
-                    )
-                    .lineLimit(1)
+                        .lineLimit(1)
+
+                    Text(movie.releaseDate)
+                        .font(
+                            .system(
+                                size: AppStyle.FontStyle.body.size
+                            )
+                        )
+                        .lineLimit(1)
+                }
 
                 Spacer()
 
@@ -52,5 +62,5 @@ struct MovieSearchCellView: View {
 }
 
 #Preview {
-    MovieSearchCellView(movie: BasicMovie.Dummy.godfather)
+    MovieCellView(movie: BasicMovie.Dummy.godfather)
 }
