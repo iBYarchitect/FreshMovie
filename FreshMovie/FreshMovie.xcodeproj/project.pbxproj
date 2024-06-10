@@ -158,13 +158,13 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		362EF7772C07481200628652 /* Top250View */ = {
+		362EF7772C07481200628652 /* TopRatedMoviesView */ = {
 			isa = PBXGroup;
 			children = (
 				362EF7632C05E64900628652 /* TopRatedMoviesView.swift */,
 				362EF77E2C0750E000628652 /* GridMovieView */,
 			);
-			path = Top250View;
+			path = TopRatedMoviesView;
 			sourceTree = "<group>";
 		};
 		362EF7782C07487E00628652 /* MainTabView */ = {
@@ -180,7 +180,7 @@
 			children = (
 				363BF2462BF7642000A5F19E /* HomeView.swift */,
 				36B0C97B2C16029E00A58EBE /* NowPlayingView */,
-				362EF7772C07481200628652 /* Top250View */,
+				362EF7772C07481200628652 /* TopRatedMoviesView */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
