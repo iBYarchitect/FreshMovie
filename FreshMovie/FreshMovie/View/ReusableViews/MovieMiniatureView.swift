@@ -16,12 +16,10 @@ struct MovieMiniatureView: View {
             .aspectRatio(contentMode: .fit)
 
             VStack(alignment: .leading) {
-                Text("\(movie.voteAverage)")
-                    .font(
-                        .system(
-                            size: AppStyle.FontStyle.footnote.size
-                        )
-                    )
+                StarRatingView(
+                    rating: movie.voteAverage,
+                    size: AppStyle.FontStyle.footnote.size
+                )
 
                 Text("")
 
