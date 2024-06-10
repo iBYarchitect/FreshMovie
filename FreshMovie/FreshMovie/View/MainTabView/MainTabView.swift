@@ -5,20 +5,26 @@ struct MainTabView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label("Home", systemImage: "house.fill")
+                    Label(homeTabLabel, systemImage: .IconName.homeTab)
                 }
 
             SearchView()
                 .tabItem {
-                    Label("Search", systemImage: "magnifyingglass")
+                    Label(searchTabLabel, systemImage: .IconName.searchTab)
                 }
 
             ProfileView()
                 .tabItem {
-                    Label("Profile", systemImage: "person.crop.circle")
+                    Label(profileTabLabel, systemImage: .IconName.userProfileTab)
                 }
         }
     }
+
+    // MARK: - Private interface
+
+    private let homeTabLabel = "Home"
+    private let searchTabLabel = "Search"
+    private let profileTabLabel = "Profile"
 }
 
 #Preview {

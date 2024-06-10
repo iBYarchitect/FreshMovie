@@ -28,13 +28,10 @@ struct MovieCellView: View {
                     )
 
                 HStack {
-                    Text("\(movie.voteAverage)")
-                        .font(
-                            .system(
-                                size: AppStyle.FontStyle.body.size
-                            )
-                        )
-                        .lineLimit(1)
+                    StarRatingView(
+                        rating: movie.voteAverage,
+                        size: AppStyle.FontStyle.body.size
+                    )
 
                     Text(movie.releaseDate)
                         .font(
