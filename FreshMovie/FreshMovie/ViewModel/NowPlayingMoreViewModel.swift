@@ -18,10 +18,15 @@ class NowPlayingMoreViewModel: ObservableObject {
                     endpoint: .getNowPlaying,
                     page: currentPage
                 )
+                let updatedMovies = response.results.map { movie -> BasicMovie in
+                    var updatedMovie = movie
+                    updatedMovie.releaseDate = extractYear(from: movie.releaseDate)
+                    return updatedMovie
+                }
                 if currentPage == 1 {
-                    movies = response.results
+                    movies = updatedMovies
                 } else {
-                    movies.append(contentsOf: response.results)
+                    movies.append(contentsOf: updatedMovies)
                 }
                 currentPage += 1
                 totalPages = response.totalPages
@@ -40,5 +45,14 @@ class NowPlayingMoreViewModel: ObservableObject {
         if let index = movies.firstIndex(where: { $0.id == movie.id }), index >= thresholdIndex {
             loadMovies()
         }
+    }
+
+    private func extractYear(from dateString: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        guard let date = formatter.date(from: dateString) else { return dateString }
+
+        formatter.dateFormat = "yyyy"
+        return formatter.string(from: date)
     }
 }
