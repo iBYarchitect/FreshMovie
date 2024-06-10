@@ -1,7 +1,7 @@
 import Foundation
 
 @MainActor
-final class HScrollMovieTileViewModel: ObservableObject {
+final class TopRatedMoviesViewModel: ObservableObject {
     @Published var movies: [BasicMovie] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
