@@ -35,4 +35,18 @@ final class DetailedMovieViewModel: ObservableObject {
         }
         return URL(string: "https://image.tmdb.org/t/p/w500\(backdropPath)")
     }
+
+    func getFormattedReleaseDate() -> String {
+        guard let releaseDate = movie?.releaseDate else { return "" }
+        return formattedReleaseDate(from: releaseDate)
+    }
+
+    private func formattedReleaseDate(from dateString: String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        guard let date = formatter.date(from: dateString) else { return dateString }
+
+        formatter.dateFormat = "yyyy MMMM dd"
+        return formatter.string(from: date)
+    }
 }

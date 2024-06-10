@@ -38,7 +38,7 @@ struct DetailedMovieView: View {
                             .foregroundStyle(Color.white)
 
                         HStack {
-                            Text(movie.releaseDate)
+                            Text(viewModel.getFormattedReleaseDate())
                                 .font(
                                     .system(
                                         size: AppStyle.FontStyle.body.size
