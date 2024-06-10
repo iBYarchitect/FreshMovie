@@ -22,6 +22,7 @@
 
 The repo contains the source code of the `FreshMovie` application.
 The `FreshMovie` application is an iOS app that allows users to view top-rated movies, movies currently in theaters, and search for movies by title. You can click on any movie in the list to view detailed information about that movie.
+[High level App Miro scheme](https://miro.com/app/board/uXjVKHYTGWs=/?share_link_id=284099993335)
  
 
 ## Installation
