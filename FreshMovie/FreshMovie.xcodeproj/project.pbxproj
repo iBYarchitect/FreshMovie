@@ -42,6 +42,7 @@
 		3638332E2C19DD3B00E43971 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362EF77F2C07639600628652 /* AppStyle.swift */; };
 		3638332F2C19DD4200E43971 /* String+IconName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F237F42C1765300035E291 /* String+IconName.swift */; };
 		363833312C19DDB700E43971 /* AppStyleFontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363833302C19DDB700E43971 /* AppStyleFontTests.swift */; };
+		363833332C19DEE900E43971 /* StringIconNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363833322C19DEE900E43971 /* StringIconNameTests.swift */; };
 		363BF2442BF763AD00A5F19E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363BF2432BF763AD00A5F19E /* MainTabView.swift */; };
 		363BF2472BF7642000A5F19E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363BF2462BF7642000A5F19E /* HomeView.swift */; };
 		363BF2492BF7644400A5F19E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363BF2482BF7644400A5F19E /* ProfileView.swift */; };
@@ -110,6 +111,7 @@
 		363833282C19DA0300E43971 /* AppColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorTests.swift; sourceTree = "<group>"; };
 		3638332B2C19DCC200E43971 /* UIElementConstantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElementConstantTests.swift; sourceTree = "<group>"; };
 		363833302C19DDB700E43971 /* AppStyleFontTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyleFontTests.swift; sourceTree = "<group>"; };
+		363833322C19DEE900E43971 /* StringIconNameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringIconNameTests.swift; sourceTree = "<group>"; };
 		363BF2432BF763AD00A5F19E /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		363BF2462BF7642000A5F19E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		363BF2482BF7644400A5F19E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				363833282C19DA0300E43971 /* AppColorTests.swift */,
 				3638332B2C19DCC200E43971 /* UIElementConstantTests.swift */,
 				363833302C19DDB700E43971 /* AppStyleFontTests.swift */,
+				363833322C19DEE900E43971 /* StringIconNameTests.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				363833292C19DA0300E43971 /* AppColorTests.swift in Sources */,
 				367A7D172C19BF23006F67F1 /* DetailedMovie+Dummy.swift in Sources */,
 				367A7D182C19BFE7006F67F1 /* Genre.swift in Sources */,
+				363833332C19DEE900E43971 /* StringIconNameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
