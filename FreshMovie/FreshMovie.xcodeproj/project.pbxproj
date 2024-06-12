@@ -35,6 +35,8 @@
 		363833232C19C59C00E43971 /* TMDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361C74C82C07B62D000A70E4 /* TMDBAPI.swift */; };
 		363833242C19C59E00E43971 /* TMDBAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361C74CA2C07B6F2000A70E4 /* TMDBAPIEndpoint.swift */; };
 		363833252C19C5A000E43971 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361C74CC2C07C124000A70E4 /* NetworkService.swift */; };
+		363833292C19DA0300E43971 /* AppColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363833282C19DA0300E43971 /* AppColorTests.swift */; };
+		3638332A2C19DA0800E43971 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362EF7712C07198900628652 /* AppColor.swift */; };
 		363BF2442BF763AD00A5F19E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363BF2432BF763AD00A5F19E /* MainTabView.swift */; };
 		363BF2472BF7642000A5F19E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363BF2462BF7642000A5F19E /* HomeView.swift */; };
 		363BF2492BF7644400A5F19E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363BF2482BF7644400A5F19E /* ProfileView.swift */; };
@@ -100,6 +102,7 @@
 		362EF7752C07454400628652 /* GridMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridMovieView.swift; sourceTree = "<group>"; };
 		362EF77C2C0748F600628652 /* MovieGridCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGridCellView.swift; sourceTree = "<group>"; };
 		362EF77F2C07639600628652 /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
+		363833282C19DA0300E43971 /* AppColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColorTests.swift; sourceTree = "<group>"; };
 		363BF2432BF763AD00A5F19E /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		363BF2462BF7642000A5F19E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		363BF2482BF7644400A5F19E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -252,6 +255,7 @@
 		363833272C19D77F00E43971 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				363833282C19DA0300E43971 /* AppColorTests.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -583,10 +587,12 @@
 				367A7D152C199F96006F67F1 /* DetailedMovieViewModelTests.swift in Sources */,
 				367A7D162C19BF20006F67F1 /* DetailedMovie.swift in Sources */,
 				367A7D192C19BFEA006F67F1 /* ProductionCompany.swift in Sources */,
+				3638332A2C19DA0800E43971 /* AppColor.swift in Sources */,
 				367A7D142C199F8C006F67F1 /* DetailedMovieViewModel.swift in Sources */,
 				367A7D1B2C19BFF1006F67F1 /* DetailedMovieCodingKeys.swift in Sources */,
 				363833232C19C59C00E43971 /* TMDBAPI.swift in Sources */,
 				367A7D1A2C19BFEC006F67F1 /* ProductionCountry.swift in Sources */,
+				363833292C19DA0300E43971 /* AppColorTests.swift in Sources */,
 				367A7D172C19BF23006F67F1 /* DetailedMovie+Dummy.swift in Sources */,
 				367A7D182C19BFE7006F67F1 /* Genre.swift in Sources */,
 			);
