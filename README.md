@@ -1,7 +1,5 @@
 # FreshMovie application 
 
-⚠️ The application is under active development.
-
 ## Current dev environment 
 
 | Dev environment| Ref link |
